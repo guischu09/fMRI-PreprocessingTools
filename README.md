@@ -9,9 +9,9 @@ This repository contains an implementation of a high level pipeline for fMRI pre
 The pipeline runs on Python, but depends on many dependencies. Here they are:
 
 
-########################################################################
+
 A.1) Install docker:
-########################################################################
+
 
 - sudo apt-get update
 - sudo apt-get install \
@@ -36,9 +36,9 @@ A.1) Install docker:
 
 - sudo docker run hello-world
 
-########################################################################
+
 A.1.1) Post Installation - run docker without sudo
-########################################################################
+
 
 - sudo groupadd docker
 
@@ -49,16 +49,16 @@ A.1.1) Post Installation - run docker without sudo
 - docker run hello-world
 
 
-########################################################################
+
 A.2) Install fmriprep image
-########################################################################
+
 
 - docker pull nipreps/fmriprep:20.1.1
 
 
-########################################################################
+
 B) Prepare the python enviroment:
-########################################################################
+
 
 1) Install miniconda. Installation details can be found at: https://docs.conda.io/en/latest/miniconda.html
 
@@ -75,9 +75,8 @@ B) Prepare the python enviroment:
 
 and say Yes to install what is missing
 
-########################################################################
+
 C) Mount device (e.g. External drive) in docker
-########################################################################
 
 Instructions: https://docs.cancergenomicscloud.org/docs/mount-a-usb-drive-in-a-docker-container#stepthree
 
@@ -113,34 +112,6 @@ alternatively, you can identify the name of your device at Disks. Search for Dis
 
 sudo umount /mnt/usb
 
-
-
-########################################################################
-Usefull tips
-########################################################################
-
-1)After doing steps A.1 and A.1.1, if you want to start a new docker process (i.e. in a new terminal) always run the following command first:
-
-- newgrp docker 
-
-2) Remove docker
-
-sudo apt-get remove docker docker-engine docker.io containerd runc
-sudo apt-get purge -y docker-engine docker docker.io docker-ce docker-ce-cli
-sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce 
-
-sudo rm -rf /var/lib/docker /etc/docker
-sudo rm /etc/apparmor.d/docker
-sudo groupdel docker
-sudo rm -rf /var/run/docker.sock
-
-3) Reboot docker
-
-- systemctl restart docker
-
-4) Test docker without sudo
-
-- docker run hello-world
 
 ### Credits ###
 
